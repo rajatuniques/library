@@ -1,10 +1,11 @@
 const myLibrary = [];
 
-function Book (title, author, pages, isRead) {
+function Book (title, author, pages, isRead, id) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
+    this.id = id;
 };
 
 Book.prototype.getInfo = function () {
@@ -22,10 +23,16 @@ Book.prototype.getInfo = function () {
     return;
 };
 
-function addBookToLibrary(title, author, pages, isRead) {
-    let new_book = new Book(title, author, pages, isRead);
+function addBookToLibrary(title, author, pages, isRead, id) {
+    let new_book = new Book(title, author, pages, isRead, id);
     myLibrary.push(new_book);
 }
 
-addBookToLibrary("a", "b", 12, true);
-console.log(myLibrary[0].getInfo());
+addBookToLibrary("a", "b", 12, true, crypto.randomUUID());
+addBookToLibrary("c", "d", 23, false, crypto.randomUUID());
+addBookToLibrary("e", "f", 74, true, crypto.randomUUID());
+
+for(let i=0; i<myLibrary.length; i++) {
+    console.log(myLibrary[i].getInfo());
+    console.log(myLibrary[i].id);
+}
