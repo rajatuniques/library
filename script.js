@@ -21,7 +21,13 @@ parent_main.addEventListener("click", (e) => {
             card.remove();
         }
     }
+
+    if(e.target.classList.contains('read')) {
+        e.target.textContent = 
+            e.target.textContent == "Yes" ? "No" : "Yes"; 
+    }
 });
+
 
 
 const myLibrary = [];
@@ -110,6 +116,7 @@ function displayBook () {
         
         read_label.textContent = "Read?";
         read_btn.textContent = book.isRead ? "Yes" : "No";
+        read_btn.classList.add("read");
         remove_btn.textContent = "Remove";
         remove_btn.classList.add("remove");
 
