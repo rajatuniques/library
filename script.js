@@ -101,17 +101,6 @@ addBookToLibrary("a", "b", 12, true, crypto.randomUUID());
 addBookToLibrary("c", "d", 23, false, crypto.randomUUID());
 addBookToLibrary("e", "f", 74, true, crypto.randomUUID());
 
-for(let i=0; i<myLibrary.length; i++) {
-    console.log(myLibrary[i].getInfo());
-    console.log(myLibrary[i].id);
-}
-let sid = myLibrary[0].id;
-removeBookFromLibrary(sid);
-for(let i=0; i<myLibrary.length; i++) {
-    console.log(myLibrary[i].getInfo());
-    console.log(myLibrary[i].id);
-}
-
 function displayBook () {
     const main = document.querySelector('main');
 
@@ -152,4 +141,4 @@ function displayBook () {
     }
 }
 
-displayBook();
+displayBook();  
