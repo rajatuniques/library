@@ -1,3 +1,29 @@
+const parent_main = document.querySelector('main');
+const rmv_btns = document.querySelectorAll('.remove');
+
+parent_main.addEventListener("click", (e) => {
+    if(e.target.classList.contains('remove')) {
+        const card = e.target.closest('.book');
+        const card_id = card.id;
+
+        // remove book object from library
+        for(let i=0; i<myLibrary.length; i++) {
+            if(card_id === myLibrary[i]) {
+                myLibrary.slice(i, 1);
+                break;
+            }
+        }
+        console.log("Remove button clicked");
+        console.log(card_id);
+
+        // remove book card from web page
+        if(card) {
+            card.remove();
+        }
+    }
+});
+
+
 const myLibrary = [];
 
 function Book (title, author, pages, isRead, id) {
@@ -84,7 +110,8 @@ function displayBook () {
         
         read_label.textContent = "Read?";
         read_btn.textContent = book.isRead ? "Yes" : "No";
-        remove_btn.textContent = "remove";
+        remove_btn.textContent = "Remove";
+        remove_btn.classList.add("remove");
 
         read_label.setAttribute('for', `read${book.id}`);
         read_btn.id = `read${book.id}`;
