@@ -1,5 +1,10 @@
 const parent_main = document.querySelector('main');
 const rmv_btns = document.querySelectorAll('.remove');
+const dialog = document.querySelector('dialog');
+const dialog_show = document.querySelector('header button');
+const dialog_close = document.querySelector('button.close');
+const dialog_add = document.querySelector('button[type="submit"]');
+const form = document.querySelector('dialog form');
 
 parent_main.addEventListener("click", (e) => {
     const card = e.target.closest('.book');
@@ -71,6 +76,33 @@ function displayBook () {
     }
 }
 
+// dialog
+dialog_show.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+dialog_close.addEventListener('click', () => {
+    dialog.close();
+});
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const new_title = formData.get('title');
+    const new_author = formData.get('author');
+    const new_pages = formData.get('pages');
+    const new_isRead = 
+        formData.get('isRead') === 'yes'? true : false;
+    
+    for(let book of myLibrary) {
+        removeBookFromLibrary(book.id);
+    }
+    addBookToLibrary(new_title, new_author, new_pages, new_isRead);
+    dialog.close();
+    displayBook();
+});
+
+// code
 const myLibrary = [];
 
 function Book (title, author, pages, isRead, id) {
@@ -109,8 +141,8 @@ Book.prototype.readToggle = function (id) {
     console.log("Toggled", `${target_book.getInfo()}`);
 }
 
-function addBookToLibrary(title, author, pages, isRead, id) {
-    let new_book = new Book(title, author, pages, isRead, id);
+function addBookToLibrary(title, author, pages, isRead) {
+    let new_book = new Book(title, author, pages, isRead, crypto.randomUUID());
     myLibrary.push(new_book);
 }
 
@@ -135,9 +167,9 @@ function removeBookFromLibrary(id) {
     return;
 }
 
-addBookToLibrary("a", "b", 12, true, crypto.randomUUID());
-addBookToLibrary("c", "d", 23, false, crypto.randomUUID());
-addBookToLibrary("e", "f", 74, true, crypto.randomUUID());
+addBookToLibrary("a", "b", 12, true);
+addBookToLibrary("c", "d", 23, false);
+addBookToLibrary("e", "f", 74, true);
 
 
 displayBook();  
