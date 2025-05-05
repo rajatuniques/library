@@ -2,19 +2,16 @@ const parent_main = document.querySelector('main');
 const rmv_btns = document.querySelectorAll('.remove');
 
 parent_main.addEventListener("click", (e) => {
+    const card = e.target.closest('.book');
+    const card_id = card.id;
     if(e.target.classList.contains('remove')) {
-        const card = e.target.closest('.book');
-        const card_id = card.id;
 
         // remove book object from library
-        for(let i=0; i<myLibrary.length; i++) {
-            if(card_id === myLibrary[i]) {
-                myLibrary.slice(i, 1);
-                break;
-            }
-        }
+        removeBookFromLibrary(card_id);
+
         console.log("Remove button clicked");
         console.log(card_id);
+        console.log(myLibrary);
 
         // remove book card from web page
         if(card) {
@@ -24,7 +21,13 @@ parent_main.addEventListener("click", (e) => {
 
     if(e.target.classList.contains('read')) {
         e.target.textContent = 
-            e.target.textContent == "Yes" ? "No" : "Yes"; 
+            e.target.textContent === "Yes" ? "No" : "Yes"; 
+        for(let i=0; i<myLibrary.length; i++) {
+            if(card_id === myLibrary[i].id) {
+                myLibrary[i].readToggle(card_id);
+                break;
+            }
+        }
     }
 });
 
@@ -54,10 +57,25 @@ Book.prototype.getInfo = function () {
     return final_statement;
 };
 
+Book.prototype.readToggle = function (id) {
+    let target_book = null;
+    let target_book_idx = 0;
+    for(let i=0; i<myLibrary.length; i++) {
+        if(id === myLibrary[i].id) {
+            target_book = myLibrary[i];
+            target_book_idx = i;
+            break;
+        }
+    }
+    target_book.isRead = target_book.isRead ? false : true;
+    console.log("Toggled", `${target_book.getInfo()}`);
+}
+
 function addBookToLibrary(title, author, pages, isRead, id) {
     let new_book = new Book(title, author, pages, isRead, id);
     myLibrary.push(new_book);
 }
+
 
 function removeBookFromLibrary(id) {
     let target_book = null;
