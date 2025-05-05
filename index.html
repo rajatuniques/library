@@ -8,7 +8,43 @@
     <script type="module" src="script.js"></script>
 </head>
 <body>
+    <header>
+        <button>Add +</button>
+    </header>
     <main>
+        <dialog open>
+            <button class="close">Close</button>
+            <p>Add new book in library:</p>
+            <form method="dialog">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title">
+                </div>
+
+                <div>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="pages">
+                </div>
+                <fieldset>
+                    <legend>Have you read it?</legend>
+                    <span>
+                        <input type="radio" id="isRead" name="isRead" value="yes" checked>
+                        <label for="isRead">Yes</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="isntRead" name="isRead" value="no">
+                        <label for="isntRead">No</label>
+                    </span>
+                </fieldset>
+                
+                <button type="submit">Add</button>
+                <button type="reset">Reset</button>
+            </form>
+        </dialog>
         <div class="book" id="1">
             <h4>Title</h4>
             <p>By Author</p>
