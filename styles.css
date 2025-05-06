@@ -37,7 +37,73 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+@font-face {
+  font-family: 'Anta';
+  src: url('fonts/Anta-Regular.woff2') format('woff2'),
+      url('fonts/Anta-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('fonts/Lexend-Regular.woff2') format('woff2'),
+      url('fonts/Lexend-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
   
+
+/* custom properties */
+header {
+  --header-bg: black;
+  --header-height: 20%;
+
+  --title-font-size: 2rem;
+  --header-color: white;
+
+  --icon-size: 2em;
+
+  --add-btn-height: 3em;
+  --add-btn-width: 5em;
+  --add-icon-height: 1.4em;
+  --add-icon-width: 1.4em;
+}
+
+dialog {
+  --close-icon-size: 3em;
+  --close-btn-size: 3em;
+
+  --modal-title: 2rem;
+  --label-size: 1.2rem;
+
+  --input-field-size: 10%;
+
+  --d-text-size: 1.2rem;
+
+  --create-btn-ht: 1.8rem;
+  --reset-icon-size: 1.8rem;
+}
+
+.book {
+  --title: 1.8rem;
+  --author: 1.4rem;
+  --pages: 1.2rem;
+  --read-lbl: 1rem;
+
+  --read-btn: 2rem;
+  --rmv-icon: 3rem;
+  --card-ht: 100%;
+  --card-wt: 60%;
+}
+
+main {
+  --bg-img: grey;
+}
 
 /* layout fixes */
 main .book {
@@ -62,52 +128,31 @@ header {
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 3.5rem;
+    padding: 5%;
+    grid-template-columns: repeat(auto-fill, minmax(28vh, 1fr));
+    grid-auto-rows: 40vh;
 }
 
-/* custom properties */
-header {
-    --header-bg: black;
-    --header-height: 20%;
 
-    --title-font-size: 2rem;
-    --header-color: white;
 
-    --icon-size: 2em;
 
-    --add-btn-height: 3em;
-    --add-btn-width: 5em;
-    --add-icon-height: 1.4em;
-    --add-icon-width: 1.4em;
-}
-
-dialog {
-    --close-icon-size: 3em;
-    --close-btn-size: 3em;
-
-    --modal-title: 2rem;
-    --label-size: 1.2rem;
-
-    --input-field-size: 10%;
-
-    --d-text-size: 1.2rem;
-
-    --create-btn-ht: 1.8rem;
-    --reset-icon-size: 1.8rem;
-}
-
-main {
-    --bg-img: grey;
-}
-
-.book {
-    --title: 1.8rem;
-    --author: 1.4rem;
-    --pages: 1.2rem;
-    --read-lbl: 1rem;
-
-    --read-btn: 2rem;
-    --rmv-icon: 3rem;
-}
 
 /* style */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-color);
+}
+
+* {
+  font-family: 'Lexend', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header h1 {
+  font-family :'Anta', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img[src="images/library.svg"] {
+    filter: invert(100%);
+}
+
