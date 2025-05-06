@@ -22,3 +22,50 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+
+/* custom properties */
+header {
+    --header-bg: black;
+    --header-height: 20%;
+
+    --title-font-size: 2rem;
+    --header-color: white;
+
+    --icon-size: 2em;
+
+    --add-btn-height: 3em;
+    --add-btn-width: 5em;
+    --add-icon-height: 1.4em;
+    --add-icon-width: 1.4em;
+}
+
+dialog {
+    --close-icon-size: 3em;
+    --close-btn-size: 3em;
+
+    --modal-title: 2rem;
+    --label-size: 1.2rem;
+
+    --input-field-size: 10%;
+
+    --d-text-size: 1.2rem;
+
+    --create-btn-ht: 1.8rem;
+    --reset-icon-size: 1.8rem;
+}
+
+main {
+    --bg-img: grey;
+}
+
+.book {
+    --title: 1.8rem;
+    --author: 1.4rem;
+    --pages: 1.2rem;
+    --read-lbl: 1rem;
+
+    --read-btn: 2rem;
+    --rmv-icon: 3rem;
+}
+
+/* style */
