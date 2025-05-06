@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* custom properties */
 header {
-  --header-bg: rgb(21, 24, 48);
+  --header-bg: rgb(17, 20, 44);
   --header-height: 20%;
 
   --title-font-size: 2rem;
@@ -102,12 +102,11 @@ dialog {
 }
 
 main {
-  --bg-img: linear-gradient(to bottom right, rgb(9, 11, 41), rgb(34, 40, 92));
+  --bg-img: linear-gradient(to bottom right, #1d2037, #30354F);
 }
 
 /* layout fixes */
 main .book {
-    border: 2px solid rgb(24, 35, 77);
     padding: 10px;
 }
 
@@ -195,10 +194,6 @@ header button img {
   filter: invert();
 }
 
-.book {
-  background-color: white;
-}
-
 button {
   display: flex;
   align-items: center;
@@ -215,4 +210,83 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+.book {
+  font-size: var(--d-text-size);
+  color: white;
+  background-image: linear-gradient(to bottom left, #262837, #414354);
+  border: 0px;
+  border-radius: 8px;
+
+  display: grid;
+  align-items: end;
+  align-content: end;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(4, 10%);
+
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+.book button {
+  display: flex;
+  justify-content: center;
+}
+
+.book h4 {
+  font-size: 1.2rem;
+  grid-column: 1 / -1;
+}
+
+.book label {
+  grid-row: 4;
+  grid-column: 1;
+  display: flex;
+  gap: 4px;
+}
+
+.book h4+p {
+  grid-row: 2;
+  grid-column: 1 / -1;
+}
+
+.book p+p {
+  grid-row: 3;
+  grid-column: 1 / -1;
+}
+
+.book button.read {
+  grid-row: 4;
+  grid-column: 2;
+  height: 4%;
+  width: 24%;
+  font-size: 0.6rem;
+  font-weight: 700;
+  background-color: #6470BD;
+  border: 0;
+  color: white;
+  border-radius: 2px;
+  margin-left: 8px;
+}
+
+.book button.remove {
+  grid-row: 4;
+  grid-column: 3;
+  background-color: #CC4A54;
+  border: 0;
+  border-radius: 2px;
+  padding: 4px 8px;
+}
+
+.book button.remove img {
+  filter: invert();
+}
+
+.book:hover {
+  position: relative;
+  top: -4px;
+  box-shadow: 0px 2px 4px 2px #a0a4ba28;
 }
