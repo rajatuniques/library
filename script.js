@@ -47,6 +47,10 @@ function createBookCard(book) {
     const read_btn = document.createElement('button');
     const remove_btn = document.createElement('button');
 
+    const remove_icon = document.createElement('img');
+    remove_icon.setAttribute('src', 'images/remove.svg');
+    remove_icon.setAttribute('alt', 'remove button');
+
     book_card.classList.add('book');
     book_card.id = book.id;
 
@@ -57,8 +61,8 @@ function createBookCard(book) {
     read_label.textContent = "Read?";
     read_btn.textContent = book.isRead ? "Yes" : "No";
     read_btn.classList.add("read");
-    remove_btn.textContent = "Remove";
     remove_btn.classList.add("remove");
+    remove_btn.appendChild(remove_icon);
 
     read_label.setAttribute('for', `read${book.id}`);
     read_btn.id = `read${book.id}`;
@@ -102,7 +106,7 @@ form.addEventListener('submit', (e) => {
         formData.get('isRead') === 'yes'? true : false;
 
     console.log("Book data obtained");
-    
+
     addBookToLibrary(new_title, new_author, new_pages, new_isRead);
     dialog.close();
     let book_card = createBookCard(myLibrary[myLibrary.length - 1]);
