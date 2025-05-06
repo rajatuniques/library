@@ -81,7 +81,7 @@ dialog {
   --modal-title: 2rem;
   --label-size: 1.2rem;
 
-  --input-field-size: 10%;
+  --input-field-size: 50%;
 
   --d-text-size: 1.2rem;
 
@@ -289,4 +289,57 @@ footer {
   position: relative;
   top: -4px;
   box-shadow: 0px 2px 4px 2px #a0a4ba28;
+}
+
+/* dialog */
+dialog {
+  background-color: #1d2037;
+  color: white;
+  border: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 10fr;
+}
+
+
+dialog button img {
+  filter: invert();
+}
+
+dialog input[type="text"],
+dialog input[type="number"] {
+  background-color: inherit;
+  border: 1px solid white;
+
+  width: var(--input-field-size);
+  margin-left: 8vw;
+}
+
+dialog label {
+  margin-right: 1vw;
+}
+
+dialog form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+dialog form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+dialog p {
+  display: inline;
+  grid-column: 1;
+}
+
+dialog button {
+  background-color: inherit;
+  border: 0;
+  color: inherit;
+  grid-column: 2;
 }
