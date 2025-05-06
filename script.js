@@ -66,12 +66,12 @@ function createBookCard(book) {
 
     read_label.setAttribute('for', `read${book.id}`);
     read_btn.id = `read${book.id}`;
+    read_label.appendChild(read_btn);
     
     book_card.appendChild(book_title);
     book_card.appendChild(book_author);
     book_card.appendChild(book_pages);
     book_card.appendChild(read_label);
-    book_card.appendChild(read_btn);
     book_card.appendChild(remove_btn);
 
     return book_card;
