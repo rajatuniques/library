@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 /* custom properties */
 header,
 footer {
-  --header-bg: rgb(17, 20, 44);
+  --header-bg: linear-gradient(to top, rgb(17, 20, 44), rgb(37, 39, 59));
   --header-height: 20%;
 
   --title-font-size: 2rem;
@@ -145,7 +145,7 @@ main {
 
 /* style */
 header {
-    background-color: var(--header-bg);
+    background-image: var(--header-bg);
     color: var(--header-color);
     justify-content: center;
     align-items: center;
@@ -177,7 +177,7 @@ header button {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  background-color: rgb(52, 183, 52);
+  background-image: linear-gradient(to right,rgb(52, 183, 52), rgb(86, 189, 86));
   border: 0;
   color: white;
   padding: 4px 8px;
@@ -188,7 +188,7 @@ header button {
 }
 
 header button:hover {
-  background-color: rgb(42, 142, 42);
+  background-image: linear-gradient(to right,rgb(58, 107, 58), rgb(69, 104, 69));
 }
 
 header button img {
@@ -204,7 +204,7 @@ button {
 footer {
   height: 100px;
   width: auto;
-  background-color: var(--header-bg);
+  background-color: rgb(17, 20, 44);
   justify-content: flex-end;
   flex-grow: 1;
   color: white;
