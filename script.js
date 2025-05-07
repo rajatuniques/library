@@ -178,9 +178,10 @@ function removeBookFromLibrary(id) {
     return;
 }
 
-addBookToLibrary("a", "b", 12, true);
-addBookToLibrary("c", "d", 23, false);
-addBookToLibrary("e", "f", 74, true);
+addBookToLibrary("Gash Bell!", "Makoto Raiku", 6300, true);
+addBookToLibrary("Guitar Aerobics", "Troy Nelson", 112, true);
+addBookToLibrary("Automate Boring Stuff With Python", "Al Sweigart", 550, false);
+addBookToLibrary("Jujutsu Kaisen", "Gege Akutami", 5187, true)
 
 
 displayBook();  
