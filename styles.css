@@ -125,6 +125,8 @@ body {
 
 header {
     display: flex;
+    justify-content: space-between;
+    padding: 16px;
 }
 
 main {
@@ -147,7 +149,6 @@ main {
 header {
     background-image: var(--header-bg);
     color: var(--header-color);
-    justify-content: center;
     align-items: center;
     height: 10vh;
 }
@@ -158,21 +159,20 @@ header {
 
 header h1 {
   font-family :'Anta', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-right: 40vw;
+}
+
+h1 {
+  display: flex;
 }
 
 img[src="images/library.svg"] {
     filter: invert(100%);
-    justify-self: flex-end;
-    height: 60%;
-    flex: 0 1 5%;
-    margin-right: 0vw;
-
+    height: 40px;
+    width: 40px;
 }
 
 header button {
-  margin-left: 30vw;
-  width: 9vw;
+  width: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
