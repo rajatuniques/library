@@ -59,7 +59,8 @@ h1, h2, h3, h4, h5, h6 {
   
 
 /* custom properties */
-header {
+header,
+footer {
   --header-bg: rgb(17, 20, 44);
   --header-height: 20%;
 
@@ -203,13 +204,22 @@ button {
 footer {
   height: 100px;
   width: auto;
-  background-color: black;
+  background-color: var(--header-bg);
   justify-content: flex-end;
   flex-grow: 1;
   color: white;
   display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  font-family: sans-serif;
+  font-weight: 50;
+  font-size: 0.8rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(183, 183, 237);
 }
 
 
