@@ -352,17 +352,22 @@ dialog button {
 
 dialog .close {
   display: inline;
-  margin-left: 52%;
 
-  height: 10%;
-  width: 8%;
+  height: 28px;
+  width: 28px;
   padding: 0; 
 }
 
 dialog .close img {
 
-  height: 50%;
-  width: 50%;
+  height: inherit;
+  width: inherit;
+}
+
+.first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 dialog p,
