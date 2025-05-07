@@ -217,7 +217,7 @@ footer {
 .book {
   font-size: var(--d-text-size);
   color: white;
-  background-image: linear-gradient(to bottom left, #262837, #414354);
+  background-image: linear-gradient(to bottom left, #373844, #414354);
   border: 0px;
   border-radius: 8px;
 
@@ -296,9 +296,8 @@ dialog {
   background-color: #1d2037;
   color: white;
   border: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 10fr;
+  border-radius: 4px;
+  margin: auto;
 }
 
 
@@ -309,37 +308,83 @@ dialog button img {
 dialog input[type="text"],
 dialog input[type="number"] {
   background-color: inherit;
-  border: 1px solid white;
+  border: 2px solid white;
 
   width: var(--input-field-size);
   margin-left: 8vw;
+
+  border-radius: 2px;
+
+  color: white;
 }
 
 dialog label {
   margin-right: 1vw;
 }
 
-dialog form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-column: 1 / -1;
-  grid-row: 2;
-}
-
 dialog form div {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
 }
 
 dialog p {
   display: inline;
-  grid-column: 1;
 }
 
 dialog button {
   background-color: inherit;
   border: 0;
   color: inherit;
-  grid-column: 2;
+  cursor: pointer;
+}
+
+
+dialog .close {
+  display: inline;
+  margin-left: 52%;
+
+  height: 10%;
+  width: 8%;
+  padding: 0; 
+}
+
+dialog .close img {
+
+  height: 50%;
+  width: 50%;
+}
+
+dialog p,
+dialog .close {
+  margin-bottom: 32px;
+}
+
+button[type="submit"],
+button[type="reset"] {
+  display: inline;
+  border: 2px solid white;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+  background-color: white;
+  border-color: white;
+  color: #1d2037;
+}
+
+button[type="reset"] img {
+  margin: auto;
+}
+
+button[type="reset"] img:hover {
+  filter: none;
+}
+
+dialog fieldset+span {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
 }
